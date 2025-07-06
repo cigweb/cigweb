@@ -42,12 +42,30 @@ const Header = () => {
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
             <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+              animate={{ 
+                rotate: 360,
+                scale: [1, 1.1, 1]
+              }}
+              transition={{ 
+                rotate: { duration: 8, repeat: Infinity, ease: "linear" },
+                scale: { duration: 2, repeat: Infinity, ease: "easeInOut" }
+              }}
             >
               <Bot className="h-8 w-8 text-gray-300" />
             </motion.div>
-            <span className="text-xl font-bold text-white">CigWeb</span>
+            <motion.span 
+              className="text-xl font-bold text-white"
+              animate={{ 
+                textShadow: [
+                  "0 0 0px rgba(255,255,255,0)",
+                  "0 0 10px rgba(255,255,255,0.3)",
+                  "0 0 0px rgba(255,255,255,0)"
+                ]
+              }}
+              transition={{ duration: 3, repeat: Infinity }}
+            >
+              CigWeb
+            </motion.span>
           </motion.div>
           
           <nav className="hidden md:flex items-center space-x-8">
@@ -64,7 +82,12 @@ const Header = () => {
                     location.pathname === item.href ? 'text-white' : ''
                   }`}
                 >
-                  {item.name}
+                  <motion.span
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  >
+                    {item.name}
+                  </motion.span>
                   {location.pathname === item.href && (
                     <motion.div
                       layoutId="activeTab"
@@ -79,11 +102,17 @@ const Header = () => {
           </nav>
 
           <motion.button
-            className="md:hidden text-gray-300 hover:text-white transition-colors"
+            className="md:hidden text-gray-300 hover:text-white transition-colors p-2 rounded-lg border border-gray-700 hover:border-gray-500"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.05 }}
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <motion.div
+              animate={{ rotate: isMenuOpen ? 180 : 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </motion.div>
           </motion.button>
         </div>
       </div>
@@ -107,12 +136,17 @@ const Header = () => {
                 >
                   <Link
                     to={item.href}
-                    className={`block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 font-medium ${
-                      location.pathname === item.href ? 'text-white' : ''
+                    className={`block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 font-medium rounded-lg hover:bg-gray-800/50 ${
+                      location.pathname === item.href ? 'text-white bg-gray-800/30' : ''
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {item.name}
+                    <motion.span
+                      whileHover={{ x: 5 }}
+                      transition={{ type: "spring", stiffness: 400 }}
+                    >
+                      {item.name}
+                    </motion.span>
                   </Link>
                 </motion.div>
               ))}

@@ -16,7 +16,12 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <div className="flex items-center space-x-2 mb-4">
-              <Bot className="h-8 w-8 text-gray-300" />
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+              >
+                <Bot className="h-8 w-8 text-gray-300" />
+              </motion.div>
               <span className="text-2xl font-bold text-white">CigWeb</span>
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
@@ -45,7 +50,7 @@ const Footer = () => {
                 <MessageCircle className="h-6 w-6" />
               </motion.a>
               <motion.a
-                href="mailto:contact@cigweb.dev"
+                href="mailto:cigwebbusiness@gmail.com"
                 className="text-gray-400 hover:text-gray-200 transition-colors duration-200"
                 aria-label="Email"
                 whileHover={{ scale: 1.2, rotate: 5 }}

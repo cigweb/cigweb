@@ -131,7 +131,7 @@ const Contact = () => {
               <h3 className="text-2xl font-bold text-white mb-6">İletişime Geçin</h3>
               <div className="space-y-6">
                 {[
-                  { icon: Mail, title: 'E-posta', value: 'contact@cigweb.dev', href: 'mailto:contact@cigweb.dev' },
+                  { icon: Mail, title: 'E-posta', value: 'cigwebbusiness@gmail.com', href: 'mailto:cigwebbusiness@gmail.com' },
                   { icon: MessageCircle, title: 'Discord', value: 'cigweb#1234', href: '#' },
                   { icon: Github, title: 'GitHub', value: '@cigweb', href: 'https://github.com/cigweb' },
                   { icon: MapPin, title: 'Konum', value: 'Dünya Çapında Hizmet', href: null },
