@@ -164,13 +164,15 @@ const Home = () => {
           transition={{ duration: 0.8, delay: 1 }}
         >
           {[
-            { icon: Github, href: "#", label: "GitHub" },
+            { icon: Github, href: "https://github.com/cigweb", label: "GitHub" },
             { icon: MessageCircle, href: "#", label: "Discord" },
-            { icon: Mail, href: "#", label: "Email" }
+            { icon: Mail, href: "mailto:contact@cigweb.dev", label: "Email" }
           ].map((social, index) => (
             <motion.a
               key={social.label}
               href={social.href}
+              target={social.href.startsWith('http') ? '_blank' : undefined}
+              rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
               className="text-gray-400 hover:text-gray-200 transition-colors duration-200"
               aria-label={social.label}
               whileHover={{ 

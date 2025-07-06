@@ -25,7 +25,9 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <motion.a
-                href="#"
+                href="https://github.com/cigweb"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-gray-200 transition-colors duration-200"
                 aria-label="GitHub"
                 whileHover={{ scale: 1.2, rotate: 5 }}
@@ -43,7 +45,7 @@ const Footer = () => {
                 <MessageCircle className="h-6 w-6" />
               </motion.a>
               <motion.a
-                href="#"
+                href="mailto:contact@cigweb.dev"
                 className="text-gray-400 hover:text-gray-200 transition-colors duration-200"
                 aria-label="Email"
                 whileHover={{ scale: 1.2, rotate: 5 }}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MessageCircle, Github, Send, MapPin, Clock } from 'lucide-react';
+import { Mail, MessageCircle, Github, Send, MapPin, Clock, CheckCircle, AlertCircle } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,9 +10,41 @@ const Contact = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form gönderildi:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('https://formspree.io/f/xdkogqpz', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          project: formData.project,
+          message: formData.message,
+          _subject: `CigWeb İletişim Formu - ${formData.project || 'Genel'}`,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', project: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Form gönderme hatası:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -99,11 +131,11 @@ const Contact = () => {
               <h3 className="text-2xl font-bold text-white mb-6">İletişime Geçin</h3>
               <div className="space-y-6">
                 {[
-                  { icon: Mail, title: 'E-posta', value: 'contact@cigweb.dev' },
-                  { icon: MessageCircle, title: 'Discord', value: 'cigweb#1234' },
-                  { icon: Github, title: 'GitHub', value: '@cigweb' },
-                  { icon: MapPin, title: 'Konum', value: 'Dünya Çapında Hizmet' },
-                  { icon: Clock, title: 'Yanıt Süresi', value: '24 saat içinde' }
+                  { icon: Mail, title: 'E-posta', value: 'contact@cigweb.dev', href: 'mailto:contact@cigweb.dev' },
+                  { icon: MessageCircle, title: 'Discord', value: 'cigweb#1234', href: '#' },
+                  { icon: Github, title: 'GitHub', value: '@cigweb', href: 'https://github.com/cigweb' },
+                  { icon: MapPin, title: 'Konum', value: 'Dünya Çapında Hizmet', href: null },
+                  { icon: Clock, title: 'Yanıt Süresi', value: '24 saat içinde', href: null }
                 ].map((contact, index) => (
                   <motion.div 
                     key={contact.title}
@@ -122,7 +154,18 @@ const Contact = () => {
                     </motion.div>
                     <div>
                       <p className="text-gray-300 font-medium">{contact.title}</p>
-                      <p className="text-gray-400">{contact.value}</p>
+                      {contact.href ? (
+                        <a 
+                          href={contact.href}
+                          target={contact.href.startsWith('http') ? '_blank' : undefined}
+                          rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                          className="text-gray-400 hover:text-gray-200 transition-colors"
+                        >
+                          {contact.value}
+                        </a>
+                      ) : (
+                        <p className="text-gray-400">{contact.value}</p>
+                      )}
                     </div>
                   </motion.div>
                 ))}
@@ -178,6 +221,29 @@ const Contact = () => {
             }}
           >
             <h3 className="text-2xl font-bold text-white mb-6">Projenizi Başlatın</h3>
+            
+            {submitStatus === 'success' && (
+              <motion.div 
+                className="mb-6 p-4 bg-green-900/20 border border-green-500/30 rounded-lg flex items-center"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+              >
+                <CheckCircle className="h-5 w-5 text-green-400 mr-3" />
+                <p className="text-green-300">Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağım.</p>
+              </motion.div>
+            )}
+
+            {submitStatus === 'error' && (
+              <motion.div 
+                className="mb-6 p-4 bg-red-900/20 border border-red-500/30 rounded-lg flex items-center"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+              >
+                <AlertCircle className="h-5 w-5 text-red-400 mr-3" />
+                <p className="text-red-300">Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin veya doğrudan e-posta gönderin.</p>
+              </motion.div>
+            )}
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -195,7 +261,8 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 focus:ring-2 focus:ring-gray-500/20 transition-all duration-300"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 focus:ring-2 focus:ring-gray-500/20 transition-all duration-300 disabled:opacity-50"
                   placeholder="Adınız"
                 />
               </motion.div>
@@ -216,7 +283,8 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 focus:ring-2 focus:ring-gray-500/20 transition-all duration-300"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 focus:ring-2 focus:ring-gray-500/20 transition-all duration-300 disabled:opacity-50"
                   placeholder="eposta@ornek.com"
                 />
               </motion.div>
@@ -236,7 +304,8 @@ const Contact = () => {
                   value={formData.project}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-gray-500 focus:ring-2 focus:ring-gray-500/20 transition-all duration-300"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-gray-500 focus:ring-2 focus:ring-gray-500/20 transition-all duration-300 disabled:opacity-50"
                 >
                   <option value="">Proje türü seçin</option>
                   <option value="custom-bot">Özel Discord Botu</option>
@@ -264,23 +333,38 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 focus:ring-2 focus:ring-gray-500/20 transition-all duration-300 resize-none"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 focus:ring-2 focus:ring-gray-500/20 transition-all duration-300 resize-none disabled:opacity-50"
                   placeholder="Proje gereksinimleriniz, ihtiyaç duyulan özellikler, zaman çizelgesi ve özel detaylar hakkında bana bilgi verin..."
                 />
               </motion.div>
               
               <motion.button
                 type="submit"
-                className="w-full bg-gradient-to-r from-gray-800 to-gray-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center border border-gray-600"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-gray-800 to-gray-700 text-white px-6 py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center border border-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
                 viewport={{ once: true }}
               >
-                <Send className="h-5 w-5 mr-2" />
-                Mesaj Gönder
+                {isSubmitting ? (
+                  <>
+                    <motion.div
+                      className="w-5 h-5 border-2 border-white border-t-transparent rounded-full mr-2"
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                    />
+                    Gönderiliyor...
+                  </>
+                ) : (
+                  <>
+                    <Send className="h-5 w-5 mr-2" />
+                    Mesaj Gönder
+                  </>
+                )}
               </motion.button>
             </form>
           </motion.div>
