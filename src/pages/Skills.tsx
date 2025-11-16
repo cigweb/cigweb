@@ -70,7 +70,7 @@ const Skills = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="py-20 bg-gradient-to-b from-purple-950 to-black pt-24"
+      className="py-20 bg-gradient-to-b from-gray-900 to-black pt-24"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
@@ -81,7 +81,7 @@ const Skills = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Teknik <motion.span 
-              className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent"
+              className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent"
               animate={{ 
                 backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
               }}
@@ -95,7 +95,7 @@ const Skills = () => {
             </motion.span>
           </h2>
           <motion.p 
-            className="text-xl text-purple-200 max-w-3xl mx-auto"
+            className="text-xl text-gray-300 max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
@@ -114,20 +114,20 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <motion.div
               key={index}
-              className="bg-gradient-to-br from-purple-900/60 to-cyan-900/60 rounded-2xl p-8 backdrop-blur-sm border border-purple-500/30 hover:border-purple-400 transition-all duration-300"
+              className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 rounded-2xl p-8 backdrop-blur-sm border border-gray-600/30 hover:border-blue-400 transition-all duration-300"
               variants={itemVariants}
               whileHover={{ 
                 scale: 1.02,
-                boxShadow: "0 20px 40px rgba(168, 85, 247, 0.2)"
+                boxShadow: "0 20px 40px rgba(59, 130, 246, 0.2)"
               }}
             >
               <div className="flex items-center mb-8">
                 <motion.div 
-                  className="bg-gradient-to-br from-purple-700/50 to-cyan-700/50 rounded-xl p-3 mr-4"
+                  className="bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-xl p-3 mr-4"
                   whileHover={{ rotate: [0, -10, 10, 0] }}
                   transition={{ duration: 0.5 }}
                 >
-                  <category.icon className="h-6 w-6 text-purple-200" />
+                  <category.icon className="h-6 w-6 text-blue-300" />
                 </motion.div>
                 <h3 className="text-2xl font-bold text-white">{category.title}</h3>
               </div>
@@ -143,9 +143,9 @@ const Skills = () => {
                     viewport={{ once: true }}
                   >
                     <div className="flex items-center justify-between">
-                      <span className="text-purple-200 font-medium">{skill.name}</span>
+                      <span className="text-gray-300 font-medium">{skill.name}</span>
                       <motion.span 
-                        className="text-purple-300 text-sm font-medium"
+                        className="text-blue-300 text-sm font-medium"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ delay: skillIndex * 0.1 + 0.3 }}
@@ -154,9 +154,9 @@ const Skills = () => {
                         {skill.level}%
                       </motion.span>
                     </div>
-                    <div className="w-full bg-purple-900/50 rounded-full h-2">
+                    <div className="w-full bg-gray-700/50 rounded-full h-2">
                       <motion.div
-                        className="bg-gradient-to-r from-purple-500 to-cyan-500 h-2 rounded-full"
+                        className="bg-gradient-to-r from-blue-500 to-green-500 h-2 rounded-full"
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         transition={{ 
@@ -182,14 +182,14 @@ const Skills = () => {
           viewport={{ once: true }}
         >
           <motion.div 
-            className="bg-gradient-to-br from-purple-900/60 to-cyan-900/60 rounded-2xl p-8 backdrop-blur-sm border border-purple-500/30"
+            className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 rounded-2xl p-8 backdrop-blur-sm border border-gray-600/30"
             whileHover={{ 
               scale: 1.02,
-              boxShadow: "0 20px 40px rgba(168, 85, 247, 0.3)"
+              boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)"
             }}
           >
             <h3 className="text-2xl font-bold text-white mb-4">Sürekli Öğrenme</h3>
-            <p className="text-purple-200 mb-6 max-w-2xl mx-auto">
+            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
               Teknoloji hızla gelişiyor ve en son Roblox güncellemeleri, exploit teknikleri 
               ve tasarım trendleri ile güncel kalarak son teknoloji çözümler sunmaya kararlıyım.
             </p>
@@ -197,8 +197,8 @@ const Skills = () => {
               {['Roblox API', 'Modern Exploits', 'UI Trends'].map((tech, index) => (
                 <motion.span
                   key={tech}
-                  className="px-4 py-2 bg-purple-800/50 text-purple-200 rounded-full text-sm font-medium border border-purple-500/30"
-                  whileHover={{ scale: 1.1, backgroundColor: "rgba(147, 51, 234, 0.3)", borderColor: "#a855f7" }}
+                  className="px-4 py-2 bg-gray-700/50 text-blue-300 rounded-full text-sm font-medium border border-gray-600/30"
+                  whileHover={{ scale: 1.1, backgroundColor: "rgba(59, 130, 246, 0.2)", borderColor: "#3b82f6" }}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.1 }}

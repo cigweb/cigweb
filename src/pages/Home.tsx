@@ -29,11 +29,11 @@ const Home = () => {
       className="min-h-screen bg-black pt-16"
     >
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-black via-purple-950 to-black">
+      <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div 
-            className="absolute -top-40 -right-40 w-80 h-80 bg-purple-600/20 rounded-full blur-3xl"
+            className="absolute -top-40 -right-40 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl"
             animate={{ 
               scale: [1, 1.2, 1],
               opacity: [0.2, 0.4, 0.2],
@@ -46,7 +46,7 @@ const Home = () => {
             }}
           />
           <motion.div 
-            className="absolute -bottom-40 -left-40 w-80 h-80 bg-cyan-600/20 rounded-full blur-3xl"
+            className="absolute -bottom-40 -left-40 w-80 h-80 bg-green-600/20 rounded-full blur-3xl"
             animate={{ 
               scale: [1.2, 1, 1.2],
               opacity: [0.4, 0.2, 0.4],
@@ -61,10 +61,10 @@ const Home = () => {
           />
           
           {/* Floating particles */}
-          {[...Array(40)].map((_, i) => (
+          {[...Array(30)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-purple-400/40 rounded-full"
+              className="absolute w-1 h-1 bg-blue-400/40 rounded-full"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -99,18 +99,18 @@ const Home = () => {
               transition={{ duration: 1, delay: 0.2, type: "spring", stiffness: 200 }}
             >
               <motion.div 
-                className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-purple-500 shadow-2xl shadow-purple-500/50"
+                className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-blue-500 shadow-2xl shadow-blue-500/50"
                 whileHover={{ 
                   scale: 1.1,
-                  borderColor: "#a855f7",
-                  boxShadow: "0 0 40px rgba(168, 85, 247, 0.8)"
+                  borderColor: "#3b82f6",
+                  boxShadow: "0 0 40px rgba(59, 130, 246, 0.8)"
                 }}
                 animate={{
                   y: [-5, 5, -5],
                   boxShadow: [
-                    "0 0 20px rgba(168, 85, 247, 0.3)",
-                    "0 0 30px rgba(168, 85, 247, 0.5)",
-                    "0 0 20px rgba(168, 85, 247, 0.3)"
+                    "0 0 20px rgba(59, 130, 246, 0.3)",
+                    "0 0 30px rgba(59, 130, 246, 0.5)",
+                    "0 0 20px rgba(59, 130, 246, 0.3)"
                   ]
                 }}
                 transition={{
@@ -137,7 +137,7 @@ const Home = () => {
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
                 <motion.span 
-                  className="bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent"
+                  className="bg-gradient-to-r from-blue-400 via-green-400 to-blue-400 bg-clip-text text-transparent"
                   animate={{ 
                     backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
                   }}
@@ -154,7 +154,7 @@ const Home = () => {
             </motion.div>
             
             <motion.h2 
-              className="text-3xl md:text-4xl text-purple-300 mb-4 font-light"
+              className="text-3xl md:text-4xl text-blue-300 mb-4 font-light"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -169,15 +169,15 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
             >
               <motion.div 
-                className="bg-gradient-to-r from-purple-900/80 to-cyan-900/80 px-6 py-3 rounded-full border border-purple-500/50"
-                whileHover={{ scale: 1.05, borderColor: "#a855f7" }}
+                className="bg-gradient-to-r from-gray-800/80 to-gray-700/80 px-6 py-3 rounded-full border border-blue-500/50"
+                whileHover={{ scale: 1.05, borderColor: "#3b82f6" }}
               >
-                <span className="text-purple-200 font-medium">& Yaratıcı Çözümler</span>
+                <span className="text-blue-200 font-medium">& Yaratıcı Çözümler</span>
               </motion.div>
             </motion.div>
             
             <motion.p 
-              className="text-xl md:text-2xl text-purple-200 mb-12 max-w-3xl mx-auto leading-relaxed"
+              className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 }}
@@ -197,14 +197,14 @@ const Home = () => {
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
-                className="bg-gradient-to-br from-purple-900/60 to-cyan-900/60 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/30"
+                className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-600/30"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1.4 + index * 0.1 }}
                 whileHover={{ 
                   scale: 1.05,
-                  borderColor: "#a855f7",
-                  boxShadow: "0 10px 30px rgba(168, 85, 247, 0.3)"
+                  borderColor: "#3b82f6",
+                  boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)"
                 }}
               >
                 <motion.div
@@ -218,7 +218,7 @@ const Home = () => {
                     delay: index * 0.5
                   }}
                 >
-                  <stat.icon className="h-8 w-8 text-purple-300 mx-auto mb-3" />
+                  <stat.icon className="h-8 w-8 text-blue-400 mx-auto mb-3" />
                 </motion.div>
                 <motion.div 
                   className="text-2xl font-bold text-white mb-1"
@@ -232,7 +232,7 @@ const Home = () => {
                 >
                   {stat.value}
                 </motion.div>
-                <div className="text-purple-200 text-sm">{stat.label}</div>
+                <div className="text-gray-300 text-sm">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -246,14 +246,14 @@ const Home = () => {
             <motion.div
               whileHover={{ 
                 scale: 1.05, 
-                boxShadow: "0 20px 40px rgba(168, 85, 247, 0.4)",
+                boxShadow: "0 20px 40px rgba(59, 130, 246, 0.4)",
                 y: -5
               }}
               whileTap={{ scale: 0.95 }}
             >
               <Link
                 to="/projeler"
-                className="group bg-gradient-to-r from-purple-600 to-cyan-600 text-white px-10 py-4 rounded-xl font-semibold hover:from-purple-500 hover:to-cyan-500 transition-all duration-300 shadow-lg flex items-center border border-purple-400/50"
+                className="group bg-gradient-to-r from-blue-600 to-green-600 text-white px-10 py-4 rounded-xl font-semibold hover:from-blue-500 hover:to-green-500 transition-all duration-300 shadow-lg flex items-center border border-blue-400/50"
               >
                 <Sparkles className="h-6 w-6 mr-3" />
                 <span className="text-lg">Projelerimi Gör</span>
@@ -273,7 +273,7 @@ const Home = () => {
             >
               <Link
                 to="/iletisim"
-                className="group border-2 border-purple-400 text-purple-300 px-10 py-4 rounded-xl font-semibold hover:bg-purple-600 hover:text-white transition-all duration-300 text-lg"
+                className="group border-2 border-blue-400 text-blue-300 px-10 py-4 rounded-xl font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 text-lg"
               >
                 İletişime Geç
               </Link>
@@ -296,14 +296,14 @@ const Home = () => {
                 href={social.href}
                 target={social.href.startsWith('http') ? '_blank' : undefined}
                 rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="text-purple-300 hover:text-purple-100 transition-colors duration-200 p-3 rounded-full border border-purple-500/50 hover:border-purple-400"
+                className="text-gray-400 hover:text-blue-300 transition-colors duration-200 p-3 rounded-full border border-gray-600/50 hover:border-blue-400"
                 aria-label={social.label}
                 whileHover={{ 
                   scale: 1.2, 
                   rotate: [0, -10, 10, 0],
-                  color: "#e879f9",
-                  borderColor: "#a855f7",
-                  boxShadow: "0 0 20px rgba(168, 85, 247, 0.5)"
+                  color: "#60a5fa",
+                  borderColor: "#3b82f6",
+                  boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)"
                 }}
                 whileTap={{ scale: 0.9 }}
                 initial={{ opacity: 0, y: 20 }}
@@ -324,17 +324,17 @@ const Home = () => {
             transition={{ delay: 2.5 }}
           >
             <motion.div
-              className="p-2 rounded-full border border-purple-500/50"
-              whileHover={{ borderColor: "#a855f7", scale: 1.1 }}
+              className="p-2 rounded-full border border-gray-600/50"
+              whileHover={{ borderColor: "#3b82f6", scale: 1.1 }}
             >
-              <ArrowDown className="h-6 w-6 text-purple-300" />
+              <ArrowDown className="h-6 w-6 text-gray-400" />
             </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* About Preview Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-purple-950">
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -351,7 +351,7 @@ const Home = () => {
               viewport={{ once: true }}
             >
               Neden <motion.span 
-                className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent"
+                className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent"
                 animate={{ 
                   backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
                 }}
@@ -365,7 +365,7 @@ const Home = () => {
               </motion.span>?
             </motion.h2>
             <motion.p 
-              className="text-xl text-purple-200 max-w-3xl mx-auto"
+              className="text-xl text-gray-300 max-w-3xl mx-auto"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
@@ -401,14 +401,14 @@ const Home = () => {
             ].map((feature, index) => (
               <motion.div
                 key={index}
-                className="bg-gradient-to-br from-purple-900/60 to-cyan-900/60 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/30 text-center"
+                className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-sm rounded-2xl p-8 border border-gray-600/30 text-center"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2 }}
                 whileHover={{ 
                   scale: 1.05,
-                  borderColor: "#a855f7",
-                  boxShadow: "0 20px 40px rgba(168, 85, 247, 0.2)"
+                  borderColor: "#3b82f6",
+                  boxShadow: "0 20px 40px rgba(59, 130, 246, 0.2)"
                 }}
                 viewport={{ once: true }}
               >
@@ -427,7 +427,7 @@ const Home = () => {
                   {feature.icon}
                 </motion.div>
                 <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
-                <p className="text-purple-200 leading-relaxed">{feature.description}</p>
+                <p className="text-gray-300 leading-relaxed">{feature.description}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -445,7 +445,7 @@ const Home = () => {
             >
               <Link
                 to="/hakkimda"
-                className="inline-flex items-center bg-gradient-to-r from-purple-600 to-cyan-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-purple-500 hover:to-cyan-500 transition-all duration-300 shadow-lg hover:shadow-xl border border-purple-400/50"
+                className="inline-flex items-center bg-gradient-to-r from-blue-600 to-green-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-500 hover:to-green-500 transition-all duration-300 shadow-lg hover:shadow-xl border border-blue-400/50"
               >
                 Daha Fazla Bilgi
                 <motion.span

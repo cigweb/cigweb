@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Bot } from 'lucide-react';
+import { Menu, X, Cpu } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -51,7 +51,7 @@ const Header = () => {
                 scale: { duration: 2, repeat: Infinity, ease: "easeInOut" }
               }}
             >
-              <Bot className="h-8 w-8 text-gray-300" />
+              <Cpu className="h-8 w-8 text-blue-400" />
             </motion.div>
             <motion.span 
               className="text-xl font-bold text-white"
@@ -64,7 +64,7 @@ const Header = () => {
               }}
               transition={{ duration: 3, repeat: Infinity }}
             >
-              CigWeb
+              Frig
             </motion.span>
           </motion.div>
           
@@ -102,7 +102,7 @@ const Header = () => {
           </nav>
 
           <motion.button
-            className="md:hidden text-gray-300 hover:text-white transition-colors p-2 rounded-lg border border-gray-700 hover:border-gray-500"
+            className="md:hidden text-gray-300 hover:text-white transition-colors p-2 rounded-lg border border-gray-600 hover:border-blue-400"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             whileTap={{ scale: 0.95 }}
             whileHover={{ scale: 1.05 }}
@@ -124,7 +124,7 @@ const Header = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-black/95 backdrop-blur-sm border-t border-gray-800"
+            className="md:hidden bg-black/95 backdrop-blur-sm border-t border-gray-700"
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item, index) => (
@@ -136,8 +136,8 @@ const Header = () => {
                 >
                   <Link
                     to={item.href}
-                    className={`block px-3 py-2 text-purple-300 hover:text-purple-100 transition-colors duration-200 font-medium rounded-lg hover:bg-purple-800/50 ${
-                      location.pathname === item.href ? 'text-purple-100 bg-purple-800/30' : ''
+                    className={`block px-3 py-2 text-blue-300 hover:text-blue-100 transition-colors duration-200 font-medium rounded-lg hover:bg-blue-800/50 ${
+                      location.pathname === item.href ? 'text-blue-100 bg-blue-800/30' : ''
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >

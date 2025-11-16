@@ -89,7 +89,7 @@ const Portfolio = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             <motion.span 
-              className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent"
+              className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent"
               animate={{ 
                 backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
               }}
@@ -103,7 +103,7 @@ const Portfolio = () => {
             </motion.span>
           </h2>
           <motion.p 
-            className="text-xl text-purple-200 max-w-3xl mx-auto"
+            className="text-xl text-gray-300 max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
@@ -122,11 +122,11 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="group bg-gradient-to-br from-purple-900/60 to-cyan-900/60 rounded-2xl overflow-hidden backdrop-blur-sm border border-purple-500/30 hover:border-purple-400 transition-all duration-300"
+              className="group bg-gradient-to-br from-gray-800/60 to-gray-900/60 rounded-2xl overflow-hidden backdrop-blur-sm border border-gray-600/30 hover:border-blue-400 transition-all duration-300"
               variants={itemVariants}
               whileHover={{ 
                 scale: 1.05,
-                boxShadow: "0 20px 40px rgba(168, 85, 247, 0.3)"
+                boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)"
               }}
             >
               <div className="relative overflow-hidden">
@@ -137,19 +137,19 @@ const Portfolio = () => {
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/50 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent"></div>
               </div>
               
               <div className="p-6">
                 <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
-                <p className="text-purple-200 mb-4 text-sm leading-relaxed">{project.description}</p>
+                <p className="text-gray-300 mb-4 text-sm leading-relaxed">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, tagIndex) => (
                     <motion.span
                       key={tagIndex}
-                      className="px-3 py-1 bg-purple-800/50 text-purple-200 rounded-full text-xs font-medium border border-purple-500/30"
-                      whileHover={{ scale: 1.1, backgroundColor: "rgba(147, 51, 234, 0.3)", borderColor: "#a855f7" }}
+                      className="px-3 py-1 bg-gray-700/50 text-blue-300 rounded-full text-xs font-medium border border-gray-600/30"
+                      whileHover={{ scale: 1.1, backgroundColor: "rgba(59, 130, 246, 0.2)", borderColor: "#3b82f6" }}
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ delay: tagIndex * 0.1 }}
@@ -160,7 +160,7 @@ const Portfolio = () => {
                   ))}
                 </div>
                 
-                <div className="flex items-center justify-between mb-4 text-sm text-purple-200">
+                <div className="flex items-center justify-between mb-4 text-sm text-gray-300">
                   <motion.div 
                     className="flex items-center"
                     whileHover={{ scale: 1.05 }}
@@ -180,7 +180,7 @@ const Portfolio = () => {
                 <div className="flex space-x-3">
                   <motion.a
                     href={project.links.demo}
-                    className="flex-1 bg-gradient-to-r from-purple-600 to-cyan-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-purple-500 hover:to-cyan-500 transition-all duration-300 flex items-center justify-center border border-purple-400/50"
+                    className="flex-1 bg-gradient-to-r from-blue-600 to-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-blue-500 hover:to-green-500 transition-all duration-300 flex items-center justify-center border border-blue-400/50"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -189,7 +189,7 @@ const Portfolio = () => {
                   </motion.a>
                   <motion.a
                     href={project.links.github}
-                    className="flex-1 border border-purple-400 text-purple-200 px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-600 hover:text-white transition-all duration-300 flex items-center justify-center"
+                    className="flex-1 border border-blue-400 text-blue-300 px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-600 hover:text-white transition-all duration-300 flex items-center justify-center"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >

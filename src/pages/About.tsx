@@ -45,7 +45,7 @@ const About = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             <motion.span 
-              className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent"
+              className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent"
               animate={{ 
                 backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
               }}
@@ -59,7 +59,7 @@ const About = () => {
             </motion.span> Hakkında
           </h2>
           <motion.p 
-            className="text-xl text-purple-200 max-w-3xl mx-auto"
+            className="text-xl text-gray-300 max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
@@ -83,7 +83,7 @@ const About = () => {
               Oyun Dünyasını Şekillendirmek
             </motion.h3>
             <motion.p 
-              className="text-purple-200 text-lg leading-relaxed"
+              className="text-gray-300 text-lg leading-relaxed"
               variants={itemVariants}
             >
               4 yılı aşkın Roblox exploit geliştirme ve grafik tasarım deneyimi ile yüzlerce 
@@ -91,7 +91,7 @@ const About = () => {
               yaratıcı çözümlerle oyun dünyasında fark yaratıyorum.
             </motion.p>
             <motion.p 
-              className="text-purple-200 text-lg leading-relaxed"
+              className="text-gray-300 text-lg leading-relaxed"
               variants={itemVariants}
             >
               Uzmanlığım basit scriptlerden karmaşık exploit sistemlerine, minimalist logolardan 
@@ -105,8 +105,8 @@ const About = () => {
               {['Lua', 'C++', 'Python', 'Photoshop', 'Illustrator', 'After Effects'].map((tech, index) => (
                 <motion.span
                   key={tech}
-                  className="px-4 py-2 bg-purple-900/50 text-purple-200 rounded-full text-sm font-medium border border-purple-500/30"
-                  whileHover={{ scale: 1.1, backgroundColor: "rgba(147, 51, 234, 0.3)", borderColor: "#a855f7" }}
+                  className="px-4 py-2 bg-gray-800/50 text-blue-300 rounded-full text-sm font-medium border border-gray-600/30"
+                  whileHover={{ scale: 1.1, backgroundColor: "rgba(59, 130, 246, 0.2)", borderColor: "#3b82f6" }}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.8 + index * 0.1 }}
@@ -125,23 +125,23 @@ const About = () => {
             viewport={{ once: true }}
           >
             <motion.div 
-              className="bg-gradient-to-br from-purple-900/60 to-cyan-900/60 rounded-2xl p-8 backdrop-blur-sm border border-purple-500/30"
+              className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 rounded-2xl p-8 backdrop-blur-sm border border-gray-600/30"
               whileHover={{ 
                 scale: 1.05,
-                boxShadow: "0 20px 40px rgba(168, 85, 247, 0.3)"
+                boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)"
               }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="text-center">
                 <motion.div 
-                  className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden border-4 border-purple-500"
+                  className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden border-4 border-blue-500"
                   animate={{ 
                     rotate: [0, 5, -5, 0],
                     scale: [1, 1.05, 1],
                     boxShadow: [
-                      "0 0 20px rgba(168, 85, 247, 0.3)",
-                      "0 0 30px rgba(168, 85, 247, 0.5)",
-                      "0 0 20px rgba(168, 85, 247, 0.3)"
+                      "0 0 20px rgba(59, 130, 246, 0.3)",
+                      "0 0 30px rgba(59, 130, 246, 0.5)",
+                      "0 0 20px rgba(59, 130, 246, 0.3)"
                     ]
                   }}
                   transition={{ 
@@ -157,7 +157,7 @@ const About = () => {
                   />
                 </motion.div>
                 <h4 className="text-2xl font-bold text-white mb-2">Frig</h4>
-                <p className="text-purple-200">Roblox Exploit & Grafik Tasarım Uzmanı</p>
+                <p className="text-gray-300">Roblox Exploit & Grafik Tasarım Uzmanı</p>
               </div>
             </motion.div>
           </motion.div>
@@ -178,10 +178,10 @@ const About = () => {
               whileHover={{ y: -10 }}
             >
               <motion.div 
-                className="bg-gradient-to-br from-purple-900/60 to-cyan-900/60 rounded-2xl p-6 backdrop-blur-sm border border-purple-500/30 group-hover:border-purple-400 transition-all duration-300"
+                className="bg-gradient-to-br from-gray-800/60 to-gray-900/60 rounded-2xl p-6 backdrop-blur-sm border border-gray-600/30 group-hover:border-blue-400 transition-all duration-300"
                 whileHover={{ 
                   scale: 1.05,
-                  boxShadow: "0 10px 30px rgba(168, 85, 247, 0.3)"
+                  boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)"
                 }}
               >
                 <motion.div
@@ -194,7 +194,7 @@ const About = () => {
                     delay: index * 0.2
                   }}
                 >
-                  <stat.icon className="h-8 w-8 text-purple-300 mx-auto mb-4" />
+                  <stat.icon className="h-8 w-8 text-blue-400 mx-auto mb-4" />
                 </motion.div>
                 <motion.div 
                   className="text-3xl font-bold text-white mb-2"
@@ -209,7 +209,7 @@ const About = () => {
                 >
                   {stat.value}
                 </motion.div>
-                <div className="text-purple-200 text-sm">{stat.label}</div>
+                <div className="text-gray-300 text-sm">{stat.label}</div>
               </motion.div>
             </motion.div>
           ))}
