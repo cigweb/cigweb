@@ -136,8 +136,8 @@ const Header = () => {
                 >
                   <Link
                     to={item.href}
-                    className={`block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 font-medium rounded-lg hover:bg-gray-800/50 ${
-                      location.pathname === item.href ? 'text-white bg-gray-800/30' : ''
+                    className={`block px-3 py-2 text-purple-300 hover:text-purple-100 transition-colors duration-200 font-medium rounded-lg hover:bg-purple-800/50 ${
+                      location.pathname === item.href ? 'text-purple-100 bg-purple-800/30' : ''
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >

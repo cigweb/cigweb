@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Bot, Github, MessageCircle, Mail, Heart } from 'lucide-react';
+import { Cpu, Github, MessageCircle, Mail, Heart } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-black border-t border-gray-800">
+    <footer className="bg-black border-t border-purple-500/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-4 gap-8">
           <motion.div 
@@ -20,20 +20,20 @@ const Footer = () => {
                 animate={{ rotate: 360 }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
               >
-                <Bot className="h-8 w-8 text-gray-300" />
+                <Cpu className="h-8 w-8 text-purple-400" />
               </motion.div>
-              <span className="text-2xl font-bold text-white">CigWeb</span>
+              <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">Frig</span>
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
-              Dünya çapında topluluklar için özel çözümler oluşturan profesyonel Discord bot geliştiricisi. 
-              Discord sunucunuza yenilik ve güvenilirlik getiriyor.
+              Güçlü Roblox exploitleri ve profesyonel grafik tasarım hizmetleri sunan yaratıcı geliştirici. 
+              Oyun deneyiminizi ve görsel projelerinizi bir üst seviyeye taşıyor.
             </p>
             <div className="flex space-x-4">
               <motion.a
                 href="https://github.com/cigweb"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-gray-200 transition-colors duration-200"
+                className="text-purple-300 hover:text-purple-100 transition-colors duration-200"
                 aria-label="GitHub"
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
@@ -42,7 +42,7 @@ const Footer = () => {
               </motion.a>
               <motion.a
                 href="#"
-                className="text-gray-400 hover:text-gray-200 transition-colors duration-200"
+                className="text-purple-300 hover:text-purple-100 transition-colors duration-200"
                 aria-label="Discord"
                 whileHover={{ scale: 1.2, rotate: -5 }}
                 whileTap={{ scale: 0.9 }}
@@ -51,7 +51,7 @@ const Footer = () => {
               </motion.a>
               <motion.a
                 href="mailto:cigwebbusiness@gmail.com"
-                className="text-gray-400 hover:text-gray-200 transition-colors duration-200"
+                className="text-purple-300 hover:text-purple-100 transition-colors duration-200"
                 aria-label="Email"
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
@@ -69,10 +69,10 @@ const Footer = () => {
           >
             <h3 className="text-lg font-semibold text-white mb-4">Hizmetler</h3>
             <ul className="space-y-2">
-              <li><Link to="/hizmetler" className="text-gray-400 hover:text-gray-200 transition-colors duration-200">Özel Botlar</Link></li>
-              <li><Link to="/hizmetler" className="text-gray-400 hover:text-gray-200 transition-colors duration-200">Moderasyon</Link></li>
-              <li><Link to="/hizmetler" className="text-gray-400 hover:text-gray-200 transition-colors duration-200">Topluluk Özellikleri</Link></li>
-              <li><Link to="/hizmetler" className="text-gray-400 hover:text-gray-200 transition-colors duration-200">API Entegrasyonu</Link></li>
+              <li><Link to="/hizmetler" className="text-purple-300 hover:text-purple-100 transition-colors duration-200">Roblox Exploitler</Link></li>
+              <li><Link to="/hizmetler" className="text-purple-300 hover:text-purple-100 transition-colors duration-200">Grafik Tasarım</Link></li>
+              <li><Link to="/hizmetler" className="text-purple-300 hover:text-purple-100 transition-colors duration-200">UI/UX Tasarım</Link></li>
+              <li><Link to="/hizmetler" className="text-purple-300 hover:text-purple-100 transition-colors duration-200">Özel Geliştirme</Link></li>
             </ul>
           </motion.div>
           

@@ -1,45 +1,45 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Bot, Shield, Settings, Zap, Users, Code } from 'lucide-react';
+import { Gamepad2, Shield, Palette, Zap, Eye, Code } from 'lucide-react';
 
 const Services = () => {
   const services = [
     {
-      icon: Bot,
-      title: 'Özel Discord Botları',
-      description: 'Sunucunuzun özel ihtiyaçlarını ve gereksinimlerini karşılamak için sıfırdan tasarlanmış botlar.',
-      features: ['Özel Komutlar', 'Olay İşleme', 'Veritabanı Entegrasyonu', 'API Bağlantıları']
+      icon: Gamepad2,
+      title: 'Roblox Exploitler',
+      description: 'Güçlü ve güvenli Roblox exploitleri ile oyun deneyiminizi geliştirin.',
+      features: ['Script Executor', 'GUI Sistemleri', 'Anti-Detection', 'Özel Scriptler']
     },
     {
       icon: Shield,
-      title: 'Moderasyon Çözümleri',
-      description: 'Topluluğunuzu güvenli ve iyi yönetilen tutmak için gelişmiş moderasyon sistemleri.',
-      features: ['Otomatik Moderasyon', 'Uyarı Sistemleri', 'Kayıt Tutma', 'Spam Koruması']
+      title: 'Güvenlik Çözümleri',
+      description: 'Exploitlerinizi güvenli tutmak için gelişmiş koruma sistemleri.',
+      features: ['Anti-Ban Koruması', 'Şifreli Scriptler', 'Güvenli Injection', 'Stealth Modu']
     },
     {
-      icon: Settings,
-      title: 'Sunucu Yönetimi',
-      description: 'Büyük Discord sunucularını verimli bir şekilde yönetmek için kapsamlı araçlar.',
-      features: ['Rol Yönetimi', 'Kanal Otomasyonu', 'Karşılama Sistemleri', 'Bilet Sistemleri']
+      icon: Palette,
+      title: 'Grafik Tasarım',
+      description: 'Profesyonel logo, banner ve görsel tasarım hizmetleri.',
+      features: ['Logo Tasarımı', 'Banner & Poster', 'UI/UX Tasarım', 'Branding']
     },
     {
       icon: Zap,
       title: 'Performans Optimizasyonu',
-      description: 'Mevcut botları daha iyi performans ve güvenilirlik için optimize edin.',
-      features: ['Kod Optimizasyonu', 'Bellek Yönetimi', 'Hata İşleme', 'Çalışma Süresi İzleme']
+      description: 'Exploitlerinizi daha hızlı ve verimli hale getirin.',
+      features: ['Kod Optimizasyonu', 'Bellek Yönetimi', 'Hız Artırma', 'Kaynak Tasarrufu']
     },
     {
-      icon: Users,
-      title: 'Topluluk Özellikleri',
-      description: 'Topluluğunuzu bir araya getiren ve aktiviteyi artıran ilgi çekici özellikler.',
-      features: ['Mini Oyunlar', 'Ekonomi Sistemleri', 'Seviye Sistemleri', 'Etkinlik Yönetimi']
+      icon: Eye,
+      title: 'UI/UX Tasarım',
+      description: 'Kullanıcı dostu ve etkileyici arayüz tasarımları.',
+      features: ['Modern Arayüzler', 'Responsive Tasarım', 'Animasyonlar', 'Kullanıcı Deneyimi']
     },
     {
       icon: Code,
-      title: 'Entegrasyon Hizmetleri',
-      description: 'Discord sunucunuzu harici hizmetler ve API\'ler ile bağlayın.',
-      features: ['Üçüncü Taraf API\'ler', 'Webhook Entegrasyonu', 'Veritabanı Senkronizasyonu', 'Çapraz Platform Araçları']
+      title: 'Özel Geliştirme',
+      description: 'İhtiyaçlarınıza özel exploit ve tasarım çözümleri.',
+      features: ['Özel Scriptler', 'API Entegrasyonu', 'Özel Tasarımlar', 'Teknik Destek']
     }
   ];
 
@@ -67,7 +67,7 @@ const Services = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="py-20 bg-gray-900 pt-24"
+      className="py-20 bg-gradient-to-b from-purple-950 to-black pt-24"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
@@ -78,7 +78,7 @@ const Services = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             <motion.span 
-              className="bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent"
+              className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent"
               animate={{ 
                 backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
               }}
@@ -92,12 +92,12 @@ const Services = () => {
             </motion.span>
           </h2>
           <motion.p 
-            className="text-xl text-gray-400 max-w-3xl mx-auto"
+            className="text-xl text-purple-200 max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            Sunucunuzun işlevselliğini artırmak için kapsamlı Discord bot geliştirme hizmetleri
+            Roblox exploitleri ve grafik tasarım alanında kapsamlı profesyonel hizmetler
           </motion.p>
         </motion.div>
 
@@ -111,36 +111,36 @@ const Services = () => {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 backdrop-blur-sm border border-gray-700 hover:border-gray-500 transition-all duration-300"
+              className="group bg-gradient-to-br from-purple-900/60 to-cyan-900/60 rounded-2xl p-8 backdrop-blur-sm border border-purple-500/30 hover:border-purple-400 transition-all duration-300"
               variants={itemVariants}
               whileHover={{ 
                 scale: 1.05,
-                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.5)"
+                boxShadow: "0 20px 40px rgba(168, 85, 247, 0.3)"
               }}
             >
               <motion.div 
-                className="bg-gradient-to-br from-gray-700 to-gray-800 rounded-xl p-4 w-fit mb-6 group-hover:from-gray-600 group-hover:to-gray-700 transition-all duration-300"
+                className="bg-gradient-to-br from-purple-700/50 to-cyan-700/50 rounded-xl p-4 w-fit mb-6 group-hover:from-purple-600/50 group-hover:to-cyan-600/50 transition-all duration-300"
                 whileHover={{ rotate: [0, -10, 10, 0] }}
                 transition={{ duration: 0.5 }}
               >
-                <service.icon className="h-8 w-8 text-gray-300" />
+                <service.icon className="h-8 w-8 text-purple-200" />
               </motion.div>
               
               <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
-              <p className="text-gray-400 mb-6 leading-relaxed">{service.description}</p>
+              <p className="text-purple-200 mb-6 leading-relaxed">{service.description}</p>
               
               <ul className="space-y-2">
                 {service.features.map((feature, featureIndex) => (
                   <motion.li 
                     key={featureIndex} 
-                    className="flex items-center text-gray-300"
+                    className="flex items-center text-purple-200"
                     initial={{ opacity: 0, x: -10 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: featureIndex * 0.1 }}
                     viewport={{ once: true }}
                   >
                     <motion.div 
-                      className="w-2 h-2 bg-gray-400 rounded-full mr-3"
+                      className="w-2 h-2 bg-purple-400 rounded-full mr-3"
                       animate={{ scale: [1, 1.2, 1] }}
                       transition={{ 
                         duration: 2, 
@@ -169,7 +169,7 @@ const Services = () => {
           >
             <Link
               to="/iletisim"
-              className="inline-flex items-center bg-gradient-to-r from-gray-800 to-gray-700 text-white px-8 py-3 rounded-lg font-semibold hover:from-gray-700 hover:to-gray-600 transition-all duration-300 shadow-lg hover:shadow-xl border border-gray-600"
+              className="inline-flex items-center bg-gradient-to-r from-purple-600 to-cyan-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-purple-500 hover:to-cyan-500 transition-all duration-300 shadow-lg hover:shadow-xl border border-purple-400/50"
             >
               Bugün Başlayın
             </Link>
