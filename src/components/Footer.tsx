@@ -101,17 +101,17 @@ const Footer = () => {
         >
           <div className="flex flex-col md:flex-row items-center justify-between">
             <p className="text-gray-400 text-sm">
-              © 2024 CigWeb. Tüm hakları saklıdır.
+              © 2024 Frig. Tüm hakları saklıdır.
             </p>
             <motion.p 
               className="text-gray-400 text-sm flex items-center mt-2 md:mt-0"
               whileHover={{ scale: 1.05 }}
             >
-              Discord topluluğu için <motion.div
+              Oyun dünyası için <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1, repeat: Infinity }}
               >
-                <Heart className="h-4 w-4 text-red-500 mx-1" />
+                <Heart className="h-4 w-4 text-purple-500 mx-1" />
               </motion.div> ile yapıldı
             </motion.p>
           </div>
